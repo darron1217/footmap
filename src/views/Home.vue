@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+      <ion-button @click="openModal">Open Modal</ion-button>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Modal from './Modal.vue'
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
+  methods: {
+    openModal() {
+      return this.$ionic.modalController
+        .create({
+          component: Modal,
+          componentProps: {
+            data: {
+              content: 'New Content',
+            },
+            propsData: {
+              title: 'New title',
+            },
+          },
+        })
+        .then(m => m.present())
+    },
+  },
 }
 </script>
