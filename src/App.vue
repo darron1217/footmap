@@ -85,13 +85,12 @@ export default {
               role: 'cancel',
               cssClass: 'secondary',
               handler: () => {
-                console.log('Confirm Cancel')
+                
               },
             },
             {
               text: '확인',
               handler: () => {
-                console.log('Confirm Ok');
                 // 관리자페이지로 이동
                 this.$router.push('/admin');
               },
