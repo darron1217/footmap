@@ -22,10 +22,18 @@ export default new Router({
     },
     {
       path: '/admintruck',
-      name: 'admintruck',
-      component: function () { 
+      name: 'adminTruck',
+      component: function () {
         return import('./views/AdminTruck.vue')
-      }
+      },
+    },
+    {
+      path: '/admintruck/:id',
+      name: 'adminTruckDetail',
+      props: true,
+      component: function () {
+        return import('./views/AdminTruckDetail.vue')
+      },
     },
   ]
 })
